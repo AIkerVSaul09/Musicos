@@ -7,9 +7,13 @@
         Nombre=nombre;
     }
 
-    public void Saludar()
+    public virtual string GetSaludo()
     {
-      Console.WriteLine($"Hola soy {Nombre}");
+       "Hola soy" + Nombre ;
+    }
+    public virtual void Saludar()
+    {
+        Console.WriteLine(GetSaludo());
     }
     public /*virtual*/ abstract void Toca();
     /*{
@@ -21,6 +25,11 @@
 class Baterista:Musico
 {
     public string bateria{get;set;}
+    public  override string GetSaludo()
+    {
+      base.GetSaludo() + "y soy Baterista" ;
+    }
+    public 
 
  public Baterista(string nombre, string b):base(nombre)
  {
@@ -36,7 +45,10 @@ class Baterista:Musico
 class Bajista:Musico
 {
  public string bajo{get;set;}
-
+ public  override void Saludar()
+    {
+      Console.WriteLine($"Hola soy {Nombre} y soy bajista");
+    }
  public Bajista(string nombre, string b):base(nombre)
  {
     bajo=b;
