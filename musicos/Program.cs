@@ -1,4 +1,4 @@
-﻿class Musico
+﻿abstract class Musico //Clase General, no tiene sentido crear un objeto, solo crea referencias.
 {
     public string Nombre {get;set;}
 
@@ -11,10 +11,10 @@
     {
       Console.WriteLine($"Hola soy {Nombre}");
     }
-    public virtual void Toca()
-    {
+    public /*virtual*/ abstract void Toca();
+    /*{
         Console.WriteLine($"{Nombre} tocando un instrumento");
-    }
+    }*/
 
 }
 
@@ -59,7 +59,7 @@ class Program
         List<Musico> grupo= new List<Musico>();
         grupo.Add(new Bajista("joe","Yamanaka"));
         grupo.Add(new Baterista("Eric","Mac"));
-        grupo.Add(new Musico("EdSheeran"));
+        /*grupo.Add(new Musico("EdSheeran"));*/
 
         foreach(var m in grupo)
         {
