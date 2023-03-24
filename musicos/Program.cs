@@ -7,10 +7,7 @@
         Nombre=nombre;
     }
 
-    public virtual string GetSaludo()
-    {
-       "Hola soy" + Nombre ;
-    }
+    public virtual string GetSaludo() => "Hola soy" + Nombre ;
     public virtual void Saludar()
     {
         Console.WriteLine(GetSaludo());
